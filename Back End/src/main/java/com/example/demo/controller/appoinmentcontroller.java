@@ -50,9 +50,9 @@ public class appoinmentcontroller {
 			return ResponseEntity.ok(response);
 		}
 		
-		 @PostMapping("/consultant-name")
-		    public List<appoinment> filterByCounsultName(@RequestBody Map<String, String> requestBody) {
-		        String CName = requestBody.get("c_name");
-		        return appoinmentRepo.findByCounsultName(CName);
+		 @PostMapping("/consultant-name/{name}")
+		    public List<appoinment> filterByCounsultName(@PathVariable String name) {
+		        //String CName = requestBody.get("c_name");
+		        return appoinmentRepo.findByCounsultName(name);
 		    }
 }
